@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import useKeyPress from './hooks/useKeyPress';
-
-
+import { defer } from 'rxjs';
 
 function App() {
   const [words, setWords] = useState(""); // autosuggested words
@@ -23,13 +22,17 @@ function App() {
 
 
   useEffect(() => {
-    if (!typingWord) {
-      fetch('/words?context=' + written + ' ').then(res => res.json()).then(data => {
-        console.log(data.words);
-        setWords(data.words);
-        //setTypingWord(false);
-      });
+    if (typingWord) {
+      return;
     }
+    const subscription = defer(() => fetch('/words?context=' + written + ' ')).subscribe(res => res.json().then(data => {
+      console.log(data.words);
+      setWords(data.words);
+      //setTypingWord(false);
+    }));
+    return () => {
+      subscription.unsubscribe();
+    };
   }, [typingWord, autocompleted]);
 
   useKeyPress(key => {
