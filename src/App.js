@@ -26,9 +26,8 @@ function App() {
       return;
     }
     const subscription = defer(() => fetch('/words?context=' + written + ' ')).subscribe(res => res.json().then(data => {
-      console.log(data.words);
+      //console.log(data.words);
       setWords(data.words);
-      //setTypingWord(false);
     }));
     return () => {
       subscription.unsubscribe();
@@ -38,9 +37,11 @@ function App() {
   useKeyPress(key => {
     setTimeInactive(0);
     if (key === 'Enter') {
-      setWritten(written + words + ' ');
-      setAutocompleted(autocompleted + 1);
-      setWords('');
+      if (words.length > 0) {
+        setWritten(written + words + ' ');
+        setAutocompleted(autocompleted + 1);
+        setWords('');
+      }
     } else {
       setWritten(written + key);
       if (key === ' ') {
