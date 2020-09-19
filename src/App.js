@@ -65,11 +65,11 @@ function App() {
       <span style={{color:'brown'}}>Hypergraphia: intense desire to write.</span>
       <br/><br/>
 
-      Have writer's block? Can't force yourself to write? HypergraphAI uses the GPT2 language model to
+      Have writer's block? Can't force yourself to write? HypergraphAI uses the GPT-2 language model to
       write for you!
       <br/><br/>
-      After 3 seconds without typing, GPT2 will insert the next word for you. You can also
-      press enter to accept GPT2's suggestions. Don't worry too much about typoes or if the writing doesn't make
+      After 3 seconds without typing, GPT-2 will insert the next word for you. You can also
+      press enter to accept GPT-2's suggestions. Don't worry too much about typoes or if the writing doesn't make
       sense--just write!
       </a>
     </div>
@@ -81,7 +81,7 @@ function App() {
           <span className="Text-current">{(!typingWord) ? words.charAt(0) : <span>&nbsp;</span>}</span>
           <span className="Text-generated">{(!typingWord) ? words.substring(1) : <span>&nbsp;</span>}</span>
         </p>
-        <span className="Counter">GPT2 has helped {autocompleted} times.</span>
+        <span className="Counter">You have written {written.split(' ').length - 1} words. GPT-2 has helped {autocompleted} times.</span>
       </header>
     </div>
   );
