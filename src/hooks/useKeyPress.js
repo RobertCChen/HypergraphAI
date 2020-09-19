@@ -5,7 +5,6 @@ const useKeyPress = callback => {
 
   useEffect(() => {
     const downHandler = ({ key }) => {
-      console.log(key);
       if (keyPressed !== key && (key.length === 1 || key === 'Enter')) {
         setKeyPressed(key);
         callback && callback(key);

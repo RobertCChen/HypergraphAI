@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { generate } from './utils/words';
 import useKeyPress from './hooks/useKeyPress';
 
 
@@ -13,7 +12,7 @@ function App() {
   const [autocompleted, setAutocompleted] = useState(0);
 
   useEffect(() => {
-    console.log(timeInactive);
+    //console.log(timeInactive);
     let interval = null;
     interval = setInterval(() => {
       setTimeInactive(seconds => seconds + 1);
@@ -26,8 +25,9 @@ function App() {
   useEffect(() => {
     if (!typingWord) {
       fetch('/words?context=' + written + ' ').then(res => res.json()).then(data => {
+        console.log(data.words);
         setWords(data.words);
-        setTypingWord(false);
+        //setTypingWord(false);
       });
     }
   }, [typingWord, autocompleted]);
@@ -51,7 +51,12 @@ function App() {
 
   if (timeInactive > 3) {
     setTimeInactive(0);
-    setWritten(written + words.split(' ')[0] + ' ');
+    if (typingWord) {
+      let writtenArr = written.split(' ');
+      setWritten(writtenArr.slice(0, writtenArr.length - 1).join(' ') + ' ' + words.split(' ')[0] + ' ');
+    } else {
+      setWritten(written + words.split(' ')[0] + ' ');
+    }
     setAutocompleted(autocompleted + 1);
     setTypingWord(false);
     setWords('');
@@ -60,7 +65,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <div id="mySidenav" class="sidenav">
+      <div id="mySidenav" className="sidenav">
       <a href="#" id="about">
       <span style={{color:'brown'}}>Hypergraphia: intense desire to write.</span>
       <br/><br/>
