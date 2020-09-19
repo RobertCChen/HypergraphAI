@@ -25,7 +25,8 @@ function App() {
     if (typingWord) {
       return;
     }
-    const subscription = defer(() => fetch('/words?context=' + written + ' ')).subscribe(res => res.json().then(data => {
+    let context = written.substring(Math.max(0, written.length-300));
+    const subscription = defer(() => fetch('/words?context=' + context + ' ')).subscribe(res => res.json().then(data => {
       //console.log(data.words);
       setWords(data.words);
     }));
