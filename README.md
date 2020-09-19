@@ -15,6 +15,6 @@ sense—just write!
 Built using React.js, Flask, and Huggingface.
 
 ### Demo
-Video demo: [youtube.com/watch?v=iCm9XiwW0zM](youtube.com/watch?v=iCm9XiwW0zM)
+Video demo: [https://www.youtube.com/watch?v=iCm9XiwW0zM](https://www.youtube.com/watch?v=iCm9XiwW0zM)
 
 ![screenshot](./public/hypergraphai.png)
