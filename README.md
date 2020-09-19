@@ -10,9 +10,11 @@ press enter to accept GPT-2's suggestions.
 Don't worry too much about typoez or if the writing doesn't make
 sense—just write!
 
+---
 ### Tools Used
 Built using React.js, Flask, and Huggingface.
 
 ### Demo
 Video demo: [youtube.com/watch?v=iCm9XiwW0zM](youtube.com/watch?v=iCm9XiwW0zM)
+
 ![screenshot](./public/hypergraphai.png)
