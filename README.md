@@ -1,3 +1,25 @@
+### HypergraphAI (HackMIT 2020 Project)
+<html>
+<span style={{color:'red'}}>Hypergraphia:</span> <span style={{color:'grey'}}>intense desire to write.</span>
+<br/><br/>
+
+Have writer's block? Can't force yourself to write? HypergraphAI uses the GPT-2 language model to
+write for you!
+<br/><br/>
+After 3 seconds without typing, GPT-2 will insert the next word for you. You can also
+press enter to accept GPT-2's suggestions.
+<br/><br/>
+Don't worry too much about typoez or if the writing doesn't make
+sense—just write!
+</html>
+
+### Tools Used
+Built using React.js, Flask, and Huggingface.
+
+![screenshot](./public/hypergraphai.png)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
