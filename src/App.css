@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .App-logo {
@@ -35,4 +35,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Text {
+  /*white-space: pre;*/
+  width: 1000px;
+  overflow-wrap: break-word;
+}
+
+.Text-current {
+  background-color: #09d3ac;
+}
+
+.Text-out {
+  color: silver;
+}
+
+.Text-generated {
+  color: silver;
 }
