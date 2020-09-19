@@ -70,14 +70,16 @@ function App() {
       <header className="App-header">
       <div id="mySidenav" className="sidenav">
       <a href="#" id="about">
-      <span style={{color:'brown'}}>Hypergraphia: intense desire to write.</span>
+      <span style={{color:'red'}}>Hypergraphia:</span> <span style={{color:'grey'}}>intense desire to write.</span>
       <br/><br/>
 
       Have writer's block? Can't force yourself to write? HypergraphAI uses the GPT-2 language model to
       write for you!
       <br/><br/>
       After 3 seconds without typing, GPT-2 will insert the next word for you. You can also
-      press enter to accept GPT-2's suggestions. Don't worry too much about typoez or if the writing doesn't make
+      press enter to accept GPT-2's suggestions.
+      <br/><br/>
+      Don't worry too much about typoez or if the writing doesn't make
       sense—just write!
       </a>
     </div>
@@ -89,7 +91,7 @@ function App() {
           <span className="Text-current">{(!typingWord) ? words.charAt(0) : <span>&nbsp;</span>}</span>
           <span className="Text-generated">{(!typingWord) ? words.substring(1) : <span>&nbsp;</span>}</span>
         </p>
-        <span className="Counter">You have written {written.split(' ').length - 1} words. GPT-2 has helped {autocompleted} times.</span>
+        <span className="Counter">You have written <span style={{color:'turquoise'}}>{written.split(' ').length - 1}</span> words. GPT-2 has helped <span style={{color:'turquoise'}}> {autocompleted}</span> times.</span>
       </header>
     </div>
   );
