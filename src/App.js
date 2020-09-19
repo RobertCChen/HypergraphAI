@@ -60,12 +60,28 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        HypergraphAI: Break your writer's block and attain hypergraphia
+      <div id="mySidenav" class="sidenav">
+      <a href="#" id="about">
+      <span style={{color:'brown'}}>Hypergraphia: intense desire to write.</span>
+      <br/><br/>
+
+      Have writer's block? Can't force yourself to write? HypergraphAI uses the GPT2 language model to
+      write for you!
+      <br/><br/>
+      After 3 seconds without typing, GPT2 will insert the next word for you. You can also
+      press enter to accept GPT2's suggestions. Don't worry too much about typoes or if the writing doesn't make
+      sense--just write!
+      </a>
+    </div>
+
+        <h2><span style={{color:'turquoise'}}> HypergraphAI:</span> Break your writer's block and attain <span style={{color:'brown'}}>hypergraphia</span></h2>
+        <span style={{fontSize:16}}> No edits. No redos. Just write. </span>
         <p className="Text">
           {written}
           <span className="Text-current">{(!typingWord) ? words.charAt(0) : <span>&nbsp;</span>}</span>
           <span className="Text-generated">{(!typingWord) ? words.substring(1) : <span>&nbsp;</span>}</span>
         </p>
+        <span className="Counter">GPT2 has helped {autocompleted} times.</span>
       </header>
     </div>
   );
