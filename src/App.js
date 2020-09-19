@@ -78,7 +78,7 @@ function App() {
       <br/><br/>
       After 3 seconds without typing, GPT-2 will insert the next word for you. You can also
       press enter to accept GPT-2's suggestions. Don't worry too much about typoez or if the writing doesn't make
-      sense--just write!
+      sense—just write!
       </a>
     </div>
 
